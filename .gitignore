@@ -1,2 +1,6 @@
 # Maven Ignore
 target
+
+# Java Ignore
+*.jar
+*.class
