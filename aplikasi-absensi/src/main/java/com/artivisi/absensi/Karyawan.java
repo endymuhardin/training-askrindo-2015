@@ -1,6 +1,8 @@
 package com.artivisi.absensi;
 
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Karyawan {
 
@@ -9,6 +11,9 @@ public class Karyawan {
 	private String nip;
 	private String nama;
 	private Date tanggalLahir;
+	private List<Kehadiran> daftarKehadiran = new ArrayList<>();
+	private List<KetidakHadiran> daftarKetidakHadiran = new ArrayList<>();
+
 
 	// constructor
 	public Karyawan(){ // default constructor
@@ -16,6 +21,7 @@ public class Karyawan {
 	}
 
 	public Karyawan(String nip, String nama, Date tanggalLahir){
+		this(); // memanggil constructor tanpa argumen
 		System.out.println("Constructor dengan argumen");
 		this.nip = nip;
 		this.nama = nama;
