@@ -1,5 +1,6 @@
-public class Kehadiran
-{
+package com.artivisi.absensi;
+
+public class Kehadiran {
 
 
 }

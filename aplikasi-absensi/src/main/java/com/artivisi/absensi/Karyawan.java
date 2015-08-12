@@ -1,5 +1,6 @@
-public class Karyawan 
-{
+package com.artivisi.absensi;
+
+public class Karyawan {
 
 
 }

@@ -1,5 +1,6 @@
-public class WaktuKerjaNormal
-{
+package com.artivisi.absensi;
+
+public class WaktuKerjaNormal {
 
 
 }
