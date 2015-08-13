@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Column;
+import javax.persistence.Temporal;
+import static javax.persistence.TemporalType.*;
 
 @Entity
 @Table(name="m_karyawan")
@@ -19,18 +21,20 @@ public class Karyawan {
 	@Id @GeneratedValue
 	private Integer id;
 
-	@Column(nullable=false, unique=true)
+	@Column(nullable=false, unique=true, length=10)
 	private String nip;
 
-	@Column(nullable=false)
+	@Column(nullable=false, length=50)
 	private String nama;
 
 	@Column(name="tanggal_lahir")
+	@Temporal(DATE)
 	private Date tanggalLahir;
 
+	/*
 	private List<Kehadiran> daftarKehadiran = new ArrayList<>();
 	private List<KetidakHadiran> daftarKetidakHadiran = new ArrayList<>();
-
+	*/
 
 	// constructor
 	public Karyawan(){ // default constructor
