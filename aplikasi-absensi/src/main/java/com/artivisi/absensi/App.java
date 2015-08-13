@@ -1,6 +1,7 @@
 package com.artivisi.absensi;
 
 import java.util.Date;
+import com.artivisi.absensi.entity.Karyawan;
 
 /**
  * Hello world!

@@ -1,4 +1,4 @@
-package com.artivisi.absensi;
+package com.artivisi.absensi.entity;
 
 public enum JenisKetidakHadiran {
 	

@@ -1,4 +1,4 @@
-package com.artivisi.absensi;
+package com.artivisi.absensi.entity;
 
 import java.util.Date;
 import java.util.List;

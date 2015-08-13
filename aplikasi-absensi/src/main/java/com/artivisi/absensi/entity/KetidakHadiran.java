@@ -1,10 +1,13 @@
-package com.artivisi.absensi;
+package com.artivisi.absensi.entity;
+
+import java.util.Date;
 
 public class KetidakHadiran {
 	
 	private Karyawan karyawan;
 	private Date tanggal;
 	private String keterangan;
+	private String alasan;
 	private JenisKetidakHadiran jenisKetidakHadiran;
 
 	public Karyawan getKaryawan(){
