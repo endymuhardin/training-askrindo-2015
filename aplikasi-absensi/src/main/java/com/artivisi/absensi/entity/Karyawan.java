@@ -4,13 +4,30 @@ import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+
+@Entity
+@Table(name="m_karyawan")
 public class Karyawan {
 
 	private static Integer jumlahKaryawan = 0;
 
+	@Id @GeneratedValue
+	private Integer id;
+
+	@Column(nullable=false, unique=true)
 	private String nip;
+
+	@Column(nullable=false)
 	private String nama;
+
+	@Column(name="tanggal_lahir")
 	private Date tanggalLahir;
+
 	private List<Kehadiran> daftarKehadiran = new ArrayList<>();
 	private List<KetidakHadiran> daftarKetidakHadiran = new ArrayList<>();
 
