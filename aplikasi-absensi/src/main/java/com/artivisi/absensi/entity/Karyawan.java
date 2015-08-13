@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
@@ -18,8 +20,10 @@ public class Karyawan {
 
 	private static Integer jumlahKaryawan = 0;
 
-	@Id @GeneratedValue
-	private Integer id;
+	@Id
+	@GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+	private String id;
 
 	@Column(nullable=false, unique=true, length=10)
 	private String nip;

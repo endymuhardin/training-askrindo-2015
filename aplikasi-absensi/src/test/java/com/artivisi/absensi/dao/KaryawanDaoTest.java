@@ -29,14 +29,15 @@ public class KaryawanDaoTest {
 	public void setupData() throws Exception {
 		System.out.println("====== @Before ========");
 
-		String sql = "insert into m_karyawan (nip, nama)";
-		sql += "values(?,?)";
+		String sql = "insert into m_karyawan (id, nip, nama)";
+		sql += "values(?,?, ?)";
 
 		Connection c = ds.getConnection();
 		PreparedStatement ps = c.prepareStatement(sql);
 
-		ps.setString(1, "100");
-		ps.setString(2, "Karyawan 100");
+		ps.setString(1, "eee");
+		ps.setString(2, "100");
+		ps.setString(3, "Karyawan 100");
 		ps.executeUpdate();
 
 		c.close();
