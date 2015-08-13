@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
+import java.util.UUID;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -30,12 +31,12 @@ public class KaryawanDaoTest {
 		System.out.println("====== @Before ========");
 
 		String sql = "insert into m_karyawan (id, nip, nama)";
-		sql += "values(?,?, ?)";
+		sql += "values(?,?,?)";
 
 		Connection c = ds.getConnection();
 		PreparedStatement ps = c.prepareStatement(sql);
 
-		ps.setString(1, "eee");
+		ps.setString(1, UUID.randomUUID().toString());
 		ps.setString(2, "100");
 		ps.setString(3, "Karyawan 100");
 		ps.executeUpdate();
@@ -76,8 +77,8 @@ public class KaryawanDaoTest {
 	public void testHitungSemua(){
 		System.out.println("Test hitung semua");
 		Long jumlahDataKaryawan = dao.count();
-		Assert.assertTrue("Jumlah data harusnya dua, tapi ternyata "
-			+jumlahDataKaryawan, jumlahDataKaryawan == 3);
+		Assert.assertTrue("Jumlah data harusnya satu, tapi ternyata "
+			+jumlahDataKaryawan, jumlahDataKaryawan == 1);
 	}
 
 	@Test
