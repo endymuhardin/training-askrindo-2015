@@ -1,9 +1,17 @@
 package com.artivisi.absensi.dao;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import com.artivisi.absensi.entity.Karyawan;
 import java.text.SimpleDateFormat;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = Konfigurasi.class)
 public class KaryawanDaoTest {
 	private KaryawanDao dao;
 
