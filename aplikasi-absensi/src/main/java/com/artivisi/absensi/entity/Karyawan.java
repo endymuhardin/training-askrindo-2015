@@ -13,6 +13,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
 import static javax.persistence.TemporalType.*;
 import static javax.persistence.CascadeType.*;
 
@@ -36,6 +39,14 @@ public class Karyawan {
 	@Column(name="tanggal_lahir")
 	@Temporal(DATE)
 	private Date tanggalLahir;
+
+	@ManyToMany
+	@JoinTable(
+		name="menu_karyawan",
+		joinColumns=@JoinColumn(name="id_karyawan"), 
+		inverseJoinColumns=@JoinColumn(name="id_menu")
+	)
+	private List<Menu> daftarMenu = new ArrayList<>();
 
 	@OneToMany(mappedBy="karyawan", cascade=ALL, orphanRemoval=true)
 	private List<Kehadiran> daftarKehadiran = new ArrayList<>();
