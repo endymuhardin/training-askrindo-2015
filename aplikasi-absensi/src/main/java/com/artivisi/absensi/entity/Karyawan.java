@@ -12,7 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Column;
 import javax.persistence.Temporal;
+import javax.persistence.OneToMany;
 import static javax.persistence.TemporalType.*;
+import static javax.persistence.CascadeType.*;
 
 @Entity
 @Table(name="m_karyawan")
@@ -35,8 +37,10 @@ public class Karyawan {
 	@Temporal(DATE)
 	private Date tanggalLahir;
 
-	/*
+	@OneToMany(mappedBy="karyawan", cascade=ALL, orphanRemoval=true)
 	private List<Kehadiran> daftarKehadiran = new ArrayList<>();
+	
+	/*
 	private List<KetidakHadiran> daftarKetidakHadiran = new ArrayList<>();
 	*/
 
