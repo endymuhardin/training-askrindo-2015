@@ -14,9 +14,13 @@ public class HaloServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String nama = req.getParameter("tamu");
+        
         String output = "<html>\n";
         output += "<head><title>HaloServlet</title></head>\n";
         output += "<body><h1>Halo Servlet</h1>\n";
+        
+        output += "<h2>Halo "+nama+" ;\n)";
         
         Date sekarang = new Date();
         
